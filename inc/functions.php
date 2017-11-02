@@ -24,4 +24,6 @@ if (!function_exists('base_url')) {
         return $base_url;
     }
 }
+
+define("ROOT_PATH", $_SERVER["DOCUMENT_ROOT"] . "/");
 ?>
