@@ -2,6 +2,7 @@
 require_once('../inc/db.php');
   if ($_POST) {
     $db->select('SELECT * FROM tbladmin WHERE username = ? AND password = ?', array('username' => $_POST['username'],'password' => $_POST['password']), array('%s','%s'));  
+    $_SESSION['login'] = 'okey';
     header('Location:?l=t');
     exit();      
   }

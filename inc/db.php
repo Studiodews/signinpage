@@ -147,12 +147,12 @@ if ( !class_exists( 'DB' ) ) {
 
 			return $results;
 		}
-		public function delete($table, $id) {
+		public function delete($table, $field, $id) {
 			// Connect to the database
 			$db = $this->connect();
 			
 			// Prepary our query for binding
-			$stmt = $db->prepare("DELETE FROM {$table} WHERE ID = ?");
+			$stmt = $db->prepare("DELETE FROM {$table} WHERE {$field} = ?");
 			
 			// Dynamically bind values
 			$stmt->bind_param('d', $id);

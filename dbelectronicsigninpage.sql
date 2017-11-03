@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 02, 2017 at 03:51 PM
+-- Generation Time: Nov 03, 2017 at 03:51 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -50,7 +50,7 @@ INSERT INTO `tbladmin` (`id`, `username`, `password`) VALUES
 --
 
 CREATE TABLE `tblinfo` (
-  `id` int(11) NOT NULL,
+  `info_id` int(11) NOT NULL,
   `user_type_id` int(11) NOT NULL,
   `firstname` varchar(50) NOT NULL,
   `lastname` varchar(50) NOT NULL,
@@ -67,14 +67,12 @@ CREATE TABLE `tblinfo` (
 -- Dumping data for table `tblinfo`
 --
 
-INSERT INTO `tblinfo` (`id`, `user_type_id`, `firstname`, `lastname`, `contact_no`, `email`, `who_invited`, `nickname`, `pfa_agent_code`, `who_upline_qfd`, `who_direct_upline`) VALUES
+INSERT INTO `tblinfo` (`info_id`, `user_type_id`, `firstname`, `lastname`, `contact_no`, `email`, `who_invited`, `nickname`, `pfa_agent_code`, `who_upline_qfd`, `who_direct_upline`) VALUES
 (2, 1, 'John Manuel', 'Maguigad', '98123', 'asdsa@gmail.com', 'Admin', 'JM', '', '', ''),
 (3, 1, 'Christian', 'Villanueva', '091321387', 'asdsa@gmail.com', 'JM', 'Ian', '', '', ''),
 (4, 1, 'Christian', 'Villanueva', '091321387', 'asdsa@gmail.com', 'JM', 'Ian', '', '', ''),
 (5, 1, 'Christian', 'Villanueva', '091321387', 'asdsa@gmail.com', 'JM', 'Ian', '', '', ''),
-(6, 1, 'Popoy', 'Sailor', '1231231', 'popoysailor@gmail.com', 'JM', 'popoy', '123', '', ''),
-(7, 1, 'c', 'c', 'c', 'c', 'c', 'c', '', '', ''),
-(8, 2, 'a', 'f', 'l', 'o', '', 'h', '123', 'r', 'g');
+(6, 1, 'Popoy', 'Sailor', '1231231', 'popoysailor@gmail.com', 'JM', 'popoy', '123', '', '');
 
 -- --------------------------------------------------------
 
@@ -83,7 +81,7 @@ INSERT INTO `tblinfo` (`id`, `user_type_id`, `firstname`, `lastname`, `contact_n
 --
 
 CREATE TABLE `tblusertype` (
-  `id` int(11) NOT NULL,
+  `type_id` int(11) NOT NULL,
   `user_type_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -91,7 +89,7 @@ CREATE TABLE `tblusertype` (
 -- Dumping data for table `tblusertype`
 --
 
-INSERT INTO `tblusertype` (`id`, `user_type_name`) VALUES
+INSERT INTO `tblusertype` (`type_id`, `user_type_name`) VALUES
 (1, 'Guest'),
 (2, 'Associate');
 
@@ -109,13 +107,13 @@ ALTER TABLE `tbladmin`
 -- Indexes for table `tblinfo`
 --
 ALTER TABLE `tblinfo`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`info_id`);
 
 --
 -- Indexes for table `tblusertype`
 --
 ALTER TABLE `tblusertype`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`type_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -130,12 +128,12 @@ ALTER TABLE `tbladmin`
 -- AUTO_INCREMENT for table `tblinfo`
 --
 ALTER TABLE `tblinfo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `info_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `tblusertype`
 --
 ALTER TABLE `tblusertype`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
+  MODIFY `type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

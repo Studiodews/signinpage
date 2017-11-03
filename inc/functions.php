@@ -1,4 +1,5 @@
 <?php
+session_start();
 // functions
 if (!function_exists('base_url')) {
     function base_url($atRoot=FALSE, $atCore=FALSE, $parse=FALSE){

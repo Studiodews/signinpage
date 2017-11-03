@@ -15,7 +15,7 @@
 				<li><a href="<?php echo base_url(); ?>?q=about">About</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="<?php echo base_url(); ?>admin">Admin</a></li>
+				<li><a href="<?php echo base_url(); ?>admin/?l">Admin</a></li>
 			</ul>			
 		</div>
 	</div>

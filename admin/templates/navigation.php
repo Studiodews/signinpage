@@ -1,3 +1,4 @@
+<?php require_once('../inc/functions.php'); ?>
 <nav class="navbar navbar-inverse">
 	<div class="container">
 		<div class="navbar-header">
@@ -14,9 +15,11 @@
 				<li><a href="<?php echo base_url(); ?>?q">Report</a></li>
 				<li><a href="<?php echo base_url(); ?>?q=about">About</a></li>
 			</ul>
+			<?php if (isset($_SESSION['login'])) { ?>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="<?php echo base_url(); ?>admin">Logout</a></li>
+				<li><a href="<?php echo base_url(); ?>templates/logout.php">Logout</a></li>
 			</ul>			
+			<?php } ?>
 		</div>
 	</div>
 </nav>
