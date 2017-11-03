@@ -1,14 +1,14 @@
 # About
 	=> This is an Electronic Sign-In Page v1.0
+	=> Admin AJAX CRUD
 
 # Technology Used
 	=> PHP
 	=> MySQL
-	=> Boostrap
-	=> CSS3
+	=> Boostrap (CSS)
 
 # ToDo
-	=> CRUD
+	=> Add other fields in CRUD
 	=> Add css for printing badge name
 
 # Sources
