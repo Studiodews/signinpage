@@ -1,10 +1,33 @@
 <?php
 require_once('inc/db.php');
   if ($_POST) {
-    $db->insert('tblinfo',array('user_type_id'=>'1','firstname'=>$_POST['g_firstname'],'lastname'=>$_POST['g_lastname'],'nickname'=>$_POST['g_nickname'],'contact_no'=>$_POST['g_contactno'],'email'=>$_POST['g_email'],'who_invited'=>$_POST['g_whoinvited']),array('%d','%s','%s','%s','%s','%s','%s'));  
-    header('Location:?q=g_finish');
+    $db->insert('tblinfo',array('user_type_id'=>'1','firstname'=>$_POST['g_firstname'],'lastname'=>$_POST['g_lastname'],'nickname'=>$_POST['g_nickname'],'contact_no'=>$_POST['g_contactno'],'email'=>$_POST['g_email'],'who_invited'=>$_POST['g_whoinvited'],'pfa_agent_code'=>'','who_upline_qfd'=>'','who_direct_upline'=>''),array('%d','%s','%s','%s','%s','%s','%s','%s','%s','%s'));  
+        
+    header('Location:?q=g_finish&r='.$_POST['g_firstname'].'');
     exit();
   }
+
+// $servername = "localhost";
+// $username = "epinoy_db";
+// $password = "E3pinoy!981";
+// $dbname = "dbelectronicsigninpage";
+
+// // Create connection
+// $conn = new mysqli($servername, $username, $password, $dbname);
+// // Check connection
+// if ($conn->connect_error) {
+//     die("Connection failed: " . $conn->connect_error);
+// } 
+
+// $sql = "INSERT INTO `tblinfo` (user_type_id,firstname, lastname, email, contact_no, who_invited, nickname, pfa_agent_code, who_upline_qfd,who_direct_upline) VALUES ('1', 'Doe', 'Doe', 'john@example.com','123','123','123','123','123','123')";
+
+// if ($conn->query($sql) === TRUE) {
+//     echo "New record created successfully";
+// } else {
+//     echo "Error: " . $sql . "<br>" . $conn->error;
+// }
+
+// $conn->close();
 ?>
         <div class="row">
           <div class="col-lg-12">

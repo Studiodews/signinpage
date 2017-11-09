@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+//error_reporting(0);
 if ( !class_exists( 'DB' ) ) {
 	class DB {
 		public function __construct($user, $password, $database, $host = 'localhost') {
@@ -8,9 +8,11 @@ if ( !class_exists( 'DB' ) ) {
 			$this->database = $database;
 			$this->host = $host;
 		}
-		protected function connect() {
+		public function connect() {
 			return new mysqli($this->host, $this->user, $this->password, $this->database);
 		}
+
+
 		public function query($query) {
 			$db = $this->connect();
 			$result = $db->query($query);
@@ -51,7 +53,7 @@ if ( !class_exists( 'DB' ) ) {
 			
 			// Execute the query
 			$stmt->execute();
-			
+			//return $stmt->insert_id;
 			// Check for successful insertion
 			if ( $stmt->affected_rows ) {
 				return true;
@@ -203,6 +205,7 @@ if ( !class_exists( 'DB' ) ) {
 }
 
 global $db;
-$db = new DB('root', '', 'dbelectronicsigninpage');
+$db = new DB('epinoy_db', 'E3pinoy!981', 'dbelectronicsigninpage');
+$db_connect = $db->connect();
 
 // print_r($db->select('SELECT * FROM objects WHERE ID = ?', array(10), array('%d')));

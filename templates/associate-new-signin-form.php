@@ -1,8 +1,8 @@
 <?php
 require_once('inc/db.php');
   if ($_POST) {
-    $db->insert('tblinfo',array('pfa_agent_code'=>$_POST['g_pfaagenecode'],'user_type_id'=>'2','firstname'=>$_POST['g_firstname'],'lastname'=>$_POST['g_lastname'],'nickname'=>$_POST['g_nickname'],'contact_no'=>$_POST['g_contactno'],'email'=>$_POST['g_email'],'who_upline_qfd'=>$_POST['g_whouplineqfd'],'who_direct_upline'=>$_POST['g_whodirectupline']),array('%s','%d','%s','%s','%s','%s','%s','%s','%s'));
-    header('Location:?q=new_finish');
+    $db->insert('tblinfo',array('pfa_agent_code'=>$_POST['g_pfaagenecode'],'user_type_id'=>'2','firstname'=>$_POST['g_firstname'],'lastname'=>$_POST['g_lastname'],'nickname'=>$_POST['g_nickname'],'contact_no'=>$_POST['g_contactno'],'email'=>$_POST['g_email'],'who_invited'=>'','who_upline_qfd'=>$_POST['g_whouplineqfd'],'who_direct_upline'=>$_POST['g_whodirectupline']),array('%s','%d','%s','%s','%s','%s','%s','%s','%s','%s'));
+    header('Location:?q=new_finish&r='.$_POST['g_firstname'].'');
     exit();      
   }
 ?>
@@ -49,13 +49,13 @@ require_once('inc/db.php');
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="g_whoinvited" class="col-lg-2 control-label">Who is your Upline QFD?</label>
+                    <label for="g_whouplineqfd" class="col-lg-2 control-label">Who is your Upline QFD?</label>
                     <div class="col-lg-10">
                       <input type="text" name="g_whouplineqfd" class="form-control" required>
                     </div>
                   </div> 
                   <div class="form-group">
-                    <label for="g_whoinvited" class="col-lg-2 control-label">Who is your Direct Upline?</label>
+                    <label for="g_whodirectupline" class="col-lg-2 control-label">Who is your Direct Upline?</label>
                     <div class="col-lg-10">
                       <input type="text" name="g_whodirectupline" class="form-control" required>
                     </div>

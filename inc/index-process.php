@@ -10,7 +10,7 @@
 				echo '<strong>All fields are required</strong>';
 				require_once('templates/guest-signin-form.php');
 			} elseif ($_GET['q'] == "g_finish") {
-				echo '<h2>Thank you for signing in!</h2>';
+				echo '<h2>Thank you for signing in '.$_GET['r'].'!</h2>';
 				echo 'Please wait for your name badge to print before joining us in our meeting room for our Financial Opportunity Seminar!';
 			} elseif ($_GET['q'] == "new") {
 				echo '<h3>New User Registration</h3>';
@@ -22,7 +22,7 @@
 				echo '<a href="?q=new" class="btn btn-primary btn-lg btnusertype">New User</a>';
 				echo '<a href="?q=registered" class="btn btn-primary btn-lg btnusertype">Registered User</a>';
 			} elseif ($_GET['q'] == "new_finish") {
-				echo '<h2>Thank you for registering!</h2>';
+				echo '<h2>Thank you for registering '.$_GET['r'].'!</h2>';
 				echo 'To sign-in next time, please select “Registered User” and provide required information.';
 			} elseif ($_GET['q'] == "registered") {
 				echo '<h3>Registered User Sign-in</h3>';

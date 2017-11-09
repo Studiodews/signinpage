@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.1
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Nov 09, 2017 at 03:17 PM
--- Server version: 10.1.23-MariaDB
--- PHP Version: 5.6.30
+-- Host: 127.0.0.1
+-- Generation Time: Nov 02, 2017 at 03:51 PM
+-- Server version: 10.1.25-MariaDB
+-- PHP Version: 5.6.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `dbelectronicsigninpage`
 --
+CREATE DATABASE IF NOT EXISTS `dbelectronicsigninpage` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `dbelectronicsigninpage`;
 
 -- --------------------------------------------------------
 
@@ -48,7 +50,7 @@ INSERT INTO `tbladmin` (`id`, `username`, `password`) VALUES
 --
 
 CREATE TABLE `tblinfo` (
-  `info_id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `user_type_id` int(11) NOT NULL,
   `firstname` varchar(50) NOT NULL,
   `lastname` varchar(50) NOT NULL,
@@ -58,25 +60,21 @@ CREATE TABLE `tblinfo` (
   `nickname` varchar(50) NOT NULL,
   `pfa_agent_code` varchar(50) NOT NULL,
   `who_upline_qfd` varchar(150) NOT NULL,
-  `who_direct_upline` varchar(150) NOT NULL,
-  `date_register` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `who_direct_upline` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tblinfo`
 --
 
-INSERT INTO `tblinfo` (`info_id`, `user_type_id`, `firstname`, `lastname`, `contact_no`, `email`, `who_invited`, `nickname`, `pfa_agent_code`, `who_upline_qfd`, `who_direct_upline`, `date_register`) VALUES
-(2, 1, 'John Manuels', 'Maguigad', '98123', 'asdsa@gmail.com', 'Admin', 'JMs', '', '', '', '2017-10-31 06:27:43'),
-(4, 1, 'Christian', 'Villanueva', '091321387', 'asdsa@gmail.com', 'JM', 'Ian', '', '', '', '2017-11-09 06:27:43'),
-(7, 2, 'po', 'po', '09232389', 'asdasd@gnauk.com', '', 'po', '1237849', 'asd', 'asd', '2017-11-09 06:27:43'),
-(8, 1, 'Doe', 'Doe', '123', 'john@example.com', '123', '123', '123', '123', '123', '2017-11-09 06:27:43'),
-(9, 1, 'JM', 'Maguigad', '097622738499', 'ljmmaguigad28@gmail.com', 'Admin', 'JM', '', '', '', '2017-11-09 06:27:43'),
-(15, 2, 'Ohwen', 'Ohwen', '092387', 'Ohwen@gmail.com', '', 'Ohwen', 'Oh12784', 'Ohwen', 'Ohwen', '2017-11-09 06:27:43'),
-(16, 1, 'Jameston', 'Andrew', '09445967291', 'ton@gmail.com', 'JM', 'Ton', '', '', '', '2017-11-09 06:27:43'),
-(17, 1, 'Jimmy', 'Hipolito', '0982375921', 'jimm@gmail.com', 'Ton', 'Jim', '', '', '', '2017-11-09 06:28:56'),
-(18, 2, 'Christian', 'Villanueva', '09123859340', 'christian@gmail.com', '', 'Ian', 'PFA123', 'JM', 'JM', '2017-11-09 06:29:53'),
-(19, 1, 'A', 'A', '123', 'a@g.com', 'A', 'A', '', '', '', '2017-11-09 14:00:08');
+INSERT INTO `tblinfo` (`id`, `user_type_id`, `firstname`, `lastname`, `contact_no`, `email`, `who_invited`, `nickname`, `pfa_agent_code`, `who_upline_qfd`, `who_direct_upline`) VALUES
+(2, 1, 'John Manuel', 'Maguigad', '98123', 'asdsa@gmail.com', 'Admin', 'JM', '', '', ''),
+(3, 1, 'Christian', 'Villanueva', '091321387', 'asdsa@gmail.com', 'JM', 'Ian', '', '', ''),
+(4, 1, 'Christian', 'Villanueva', '091321387', 'asdsa@gmail.com', 'JM', 'Ian', '', '', ''),
+(5, 1, 'Christian', 'Villanueva', '091321387', 'asdsa@gmail.com', 'JM', 'Ian', '', '', ''),
+(6, 1, 'Popoy', 'Sailor', '1231231', 'popoysailor@gmail.com', 'JM', 'popoy', '123', '', ''),
+(7, 1, 'c', 'c', 'c', 'c', 'c', 'c', '', '', ''),
+(8, 2, 'a', 'f', 'l', 'o', '', 'h', '123', 'r', 'g');
 
 -- --------------------------------------------------------
 
@@ -85,7 +83,7 @@ INSERT INTO `tblinfo` (`info_id`, `user_type_id`, `firstname`, `lastname`, `cont
 --
 
 CREATE TABLE `tblusertype` (
-  `type_id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `user_type_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -93,7 +91,7 @@ CREATE TABLE `tblusertype` (
 -- Dumping data for table `tblusertype`
 --
 
-INSERT INTO `tblusertype` (`type_id`, `user_type_name`) VALUES
+INSERT INTO `tblusertype` (`id`, `user_type_name`) VALUES
 (1, 'Guest'),
 (2, 'Associate');
 
@@ -111,13 +109,13 @@ ALTER TABLE `tbladmin`
 -- Indexes for table `tblinfo`
 --
 ALTER TABLE `tblinfo`
-  ADD PRIMARY KEY (`info_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tblusertype`
 --
 ALTER TABLE `tblusertype`
-  ADD PRIMARY KEY (`type_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -132,12 +130,12 @@ ALTER TABLE `tbladmin`
 -- AUTO_INCREMENT for table `tblinfo`
 --
 ALTER TABLE `tblinfo`
-  MODIFY `info_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `tblusertype`
 --
 ALTER TABLE `tblusertype`
-  MODIFY `type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
