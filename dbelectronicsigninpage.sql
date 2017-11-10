@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 09, 2017 at 03:17 PM
+-- Generation Time: Nov 10, 2017 at 03:39 PM
 -- Server version: 10.1.23-MariaDB
 -- PHP Version: 5.6.30
 
@@ -44,6 +44,27 @@ INSERT INTO `tbladmin` (`id`, `username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tblassociatesignin`
+--
+
+CREATE TABLE `tblassociatesignin` (
+  `assoc_signin_id` int(11) NOT NULL,
+  `pfa_agent_code` varchar(50) NOT NULL,
+  `sign_in_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tblassociatesignin`
+--
+
+INSERT INTO `tblassociatesignin` (`assoc_signin_id`, `pfa_agent_code`, `sign_in_date`) VALUES
+(1, 'PFA123', '2017-11-10 14:25:07'),
+(2, 'Oh12784', '2017-11-10 15:11:41'),
+(4, '1237849', '2017-11-10 15:33:15');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tblinfo`
 --
 
@@ -72,11 +93,12 @@ INSERT INTO `tblinfo` (`info_id`, `user_type_id`, `firstname`, `lastname`, `cont
 (7, 2, 'po', 'po', '09232389', 'asdasd@gnauk.com', '', 'po', '1237849', 'asd', 'asd', '2017-11-09 06:27:43'),
 (8, 1, 'Doe', 'Doe', '123', 'john@example.com', '123', '123', '123', '123', '123', '2017-11-09 06:27:43'),
 (9, 1, 'JM', 'Maguigad', '097622738499', 'ljmmaguigad28@gmail.com', 'Admin', 'JM', '', '', '', '2017-11-09 06:27:43'),
-(15, 2, 'Ohwen', 'Ohwen', '092387', 'Ohwen@gmail.com', '', 'Ohwen', 'Oh12784', 'Ohwen', 'Ohwen', '2017-11-09 06:27:43'),
+(15, 2, 'Ohwenx', 'Ohwen', '092387', 'Ohwen@gmail.com', '', 'Ohwen', 'Oh12784', 'Ohwen', 'Ohwen', '2017-11-09 06:27:43'),
 (16, 1, 'Jameston', 'Andrew', '09445967291', 'ton@gmail.com', 'JM', 'Ton', '', '', '', '2017-11-09 06:27:43'),
 (17, 1, 'Jimmy', 'Hipolito', '0982375921', 'jimm@gmail.com', 'Ton', 'Jim', '', '', '', '2017-11-09 06:28:56'),
 (18, 2, 'Christian', 'Villanueva', '09123859340', 'christian@gmail.com', '', 'Ian', 'PFA123', 'JM', 'JM', '2017-11-09 06:29:53'),
-(19, 1, 'A', 'A', '123', 'a@g.com', 'A', 'A', '', '', '', '2017-11-09 14:00:08');
+(20, 1, 'marcial', 'rey', '123456', 'marcial.rey@gmail.com', 'rj', 'jun', '', '', '', '2017-11-10 03:06:36'),
+(21, 1, 'Mal', 'Mal', '0912374', 'Mal@fnmil.xom', 'Asd', 'Mal', '', '', '', '2017-11-10 04:00:52');
 
 -- --------------------------------------------------------
 
@@ -108,6 +130,12 @@ ALTER TABLE `tbladmin`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tblassociatesignin`
+--
+ALTER TABLE `tblassociatesignin`
+  ADD PRIMARY KEY (`assoc_signin_id`);
+
+--
 -- Indexes for table `tblinfo`
 --
 ALTER TABLE `tblinfo`
@@ -129,10 +157,15 @@ ALTER TABLE `tblusertype`
 ALTER TABLE `tbladmin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
+-- AUTO_INCREMENT for table `tblassociatesignin`
+--
+ALTER TABLE `tblassociatesignin`
+  MODIFY `assoc_signin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
 -- AUTO_INCREMENT for table `tblinfo`
 --
 ALTER TABLE `tblinfo`
-  MODIFY `info_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `info_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT for table `tblusertype`
 --

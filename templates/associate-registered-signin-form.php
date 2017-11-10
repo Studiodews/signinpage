@@ -1,9 +1,16 @@
 <?php
 require_once('inc/db.php');
   if ($_POST) {
-    $db->select('SELECT COUNT(*) FROM tblinfo WHERE lastname = ? AND pfa_agent_code = ?', array('lastname' => $_POST['r_lastname'],'pfa_agent_code' => $_POST['r_pfaagenecode']), array('%s','%s'));  
-    header('Location:?q=registered_finish');
-    exit();      
+    $cnt = $db->select('SELECT COUNT(*) as cnt FROM tblinfo WHERE lastname = ? AND pfa_agent_code = ?', array('lastname' => $_POST['r_lastname'],'pfa_agent_code' => $_POST['r_pfaagenecode']), array('%s','%s'));  
+    foreach($cnt as $c):
+      if ($c->cnt == 0) {
+        echo "<div class='row'><div class='col-lg-4'><div class='bs-component'><div class='alert alert-dismissible alert-danger'>Incorrect Credentials Detected...</div></div></div></div>";
+      } else {
+        $db->insert('tblassociatesignin',array('pfa_agent_code'=>$_POST['r_pfaagenecode']),array('%s'));
+        header('Location:?q=registered_finish&r='.$_POST['r_pfaagenecode'].'');
+        exit();      
+      }
+    endforeach;
   }
 ?>        
         <div class="row">
