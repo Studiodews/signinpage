@@ -2,10 +2,16 @@
 require_once('../inc/db.php');
 require_once('../inc/functions.php');
   if ($_POST) {
-    $db->select('SELECT * FROM tbladmin WHERE username = ? AND password = ?', array('username' => $_POST['username'],'password' => $_POST['password']), array('%s','%s'));  
-    $_SESSION['login'] = 'okey';
-    header('location:?l=t');
-    exit();      
+    $cnt = $db->select('SELECT COUNT(*) as cnt FROM tbladmin WHERE username = ? AND password = ?', array('username' => $_POST['username'],'password' => $_POST['password']), array('%s','%s'));  
+    foreach($cnt as $c):
+      if ($c->cnt == 0) {
+        echo "<div class='row'><div class='col-lg-4'><div class='bs-component'><div class='alert alert-dismissible alert-danger'>Incorrect Credentials Detected...</div></div></div></div>";
+      } else {
+        $_SESSION['login'] = 'okey';
+        header('location:?l=t');
+        exit();      
+      }
+    endforeach;      
   }
 ?>        
         <div class="row">
