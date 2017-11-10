@@ -14,6 +14,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<link rel="stylesheet" type="text/css" href="https://bootswatch.com/3/readable/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.4.2/css/buttons.dataTables.min.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 	<link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.ico">
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->

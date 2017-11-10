@@ -7,14 +7,12 @@
 				}
 			} elseif ($_GET['q'] == "guest") {
 				echo '<h3>Guest Sign-in</h3>';
-				echo '<strong>All fields are required</strong>';
 				require_once('templates/guest-signin-form.php');
 			} elseif ($_GET['q'] == "g_finish") {
 				echo '<h2>Thank you for signing in '.$_GET['r'].'!</h2>';
 				echo 'Please wait for your name badge to print before joining us in our meeting room for our Financial Opportunity Seminar!';
 			} elseif ($_GET['q'] == "new") {
 				echo '<h3>New User Registration</h3>';
-				echo '<strong>All fields are required</strong>';
 				require_once('templates/associate-new-signin-form.php');
 			} elseif ($_GET['q'] == "associate") {
 				echo '<h2>Associate Sign-In</h2>';
@@ -26,7 +24,6 @@
 				echo 'To sign-in next time, please select “Registered User” and provide required information.';
 			} elseif ($_GET['q'] == "registered") {
 				echo '<h3>Registered User Sign-in</h3>';
-				echo '<strong>All fields are required</strong>';
 				require_once('templates/associate-registered-signin-form.php');
 			} elseif ($_GET['q'] == "registered_finish") {
 				echo '<h2>Thank you for signing in!</h2>';

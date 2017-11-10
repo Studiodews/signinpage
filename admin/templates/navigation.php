@@ -2,7 +2,7 @@
 <nav class="navbar navbar-inverse">
 	<div class="container">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="<?php echo base_url(); ?>?l"><img src="../assets/img/pfa_logo.jpg"/></a>
+			<a class="navbar-brand" href="<?php echo base_url(); ?>?l=t"><img src="../assets/img/pfa_logo.jpg"/></a>
 			<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -12,7 +12,7 @@
 		<div class="navbar-collapse collapse" id="navbar-main">
 			<ul class="nav navbar-nav">
 				<?php if (isset($_GET['l']) || !empty($_GET['l'])) { ?>
-				<?php if (($_GET['l'] == 't') || ($_GET['l'] == 'rp') || ($_GET['l'] == 'about')) { ?>
+				<?php if ((($_GET['l'] == 't') || ($_GET['l'] == 'rp') || ($_GET['l'] == 'about')) && isset($_SESSION['login'])) { ?>
 				<li><a href="<?php echo base_url(); ?>?l=t">Dashboard</a></li>
 				<li><a href="<?php echo base_url(); ?>?l=rp">Report</a></li>
 				<?php } else { ?> 

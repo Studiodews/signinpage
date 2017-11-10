@@ -1,9 +1,10 @@
 <?php
 require_once('../inc/db.php');
+require_once('../inc/functions.php');
   if ($_POST) {
     $db->select('SELECT * FROM tbladmin WHERE username = ? AND password = ?', array('username' => $_POST['username'],'password' => $_POST['password']), array('%s','%s'));  
     $_SESSION['login'] = 'okey';
-    header('Location:?l=t');
+    header('location:?l=t');
     exit();      
   }
 ?>        
@@ -12,7 +13,7 @@ require_once('../inc/db.php');
             <div class="well bs-component">
               <form action="" method="post" class="form-horizontal">
                 <fieldset>
-                  <legend>Legend</legend>
+                  <legend>Sign In</legend>
                   <div class="form-group">
                     <label for="g_lastname" class="col-lg-2 control-label">Username</label>
                     <div class="col-lg-10">
@@ -27,7 +28,7 @@ require_once('../inc/db.php');
                   </div>
                   <div class="form-group">
                     <div class="col-lg-10 col-lg-offset-2">
-                      <button type="reset" class="btn btn-default">Cancel</button>
+                      <button type="reset" class="btn btn-default">Clear</button>
                       <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                   </div>

@@ -18,7 +18,12 @@
 				}
 			} } else {
                 if (!isset($_SESSION['login'])) {
+                    if ($_GET['l'] == "about") {
+                        echo '<h1>Welcome to our Santa Clara Office!</h1>';
+                        echo '<p>This is an Electronic Sign-In Page v1.0</p>';
+                    } else {
                         include('templates/signin-form.php');
+                    }                        
                 }         
             }
 		?>

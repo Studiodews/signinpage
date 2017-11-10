@@ -54,3 +54,7 @@ footer{
 .design p {
     color: #fff;
 }
+
+#userRecord {
+	border:none!important;
+}

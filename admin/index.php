@@ -6,7 +6,7 @@ require_once('templates/header.php');
 <body>
 <?php require_once('templates/navigation.php');?>
 <div class="container">
-	<div id="userRecord" class="row">		
+	<div id="userRecord">		
     <?php require_once('../inc/index-admin-process.php'); ?>
 	</div>
 </div>

@@ -6,35 +6,13 @@ require_once('inc/db.php');
     header('Location:?q=g_finish&r='.$_POST['g_firstname'].'');
     exit();
   }
-
-// $servername = "localhost";
-// $username = "epinoy_db";
-// $password = "E3pinoy!981";
-// $dbname = "dbelectronicsigninpage";
-
-// // Create connection
-// $conn = new mysqli($servername, $username, $password, $dbname);
-// // Check connection
-// if ($conn->connect_error) {
-//     die("Connection failed: " . $conn->connect_error);
-// } 
-
-// $sql = "INSERT INTO `tblinfo` (user_type_id,firstname, lastname, email, contact_no, who_invited, nickname, pfa_agent_code, who_upline_qfd,who_direct_upline) VALUES ('1', 'Doe', 'Doe', 'john@example.com','123','123','123','123','123','123')";
-
-// if ($conn->query($sql) === TRUE) {
-//     echo "New record created successfully";
-// } else {
-//     echo "Error: " . $sql . "<br>" . $conn->error;
-// }
-
-// $conn->close();
 ?>
         <div class="row">
           <div class="col-lg-12">
             <div class="well bs-component">
               <form method="post" action="" class="form-horizontal">
                 <fieldset>
-                  <legend>Legend</legend>
+                  <legend>All fields are required</legend>
                   <div class="form-group">
                     <label for="g_firstname" class="col-lg-2 control-label">First Name</label>
                     <div class="col-lg-10">
@@ -73,7 +51,7 @@ require_once('inc/db.php');
                   </div>                  
                   <div class="form-group">
                     <div class="col-lg-10 col-lg-offset-2">
-                      <button type="reset" class="btn btn-default">Cancel</button>
+                      <button type="reset" class="btn btn-default">Clear</button>
                       <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                   </div>

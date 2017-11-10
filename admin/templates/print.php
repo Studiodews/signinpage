@@ -1,5 +1,11 @@
 <?php
-	require_once('../../inc/db.php');
+include_once('../../inc/db.php');
+include_once('../../inc/functions.php');
+if (!isset($_SESSION['login'])) {
+	header('location:'.str_replace("templates/","",base_url()).'?l');
+	exit();
+}
+
 	if ($_GET['p'] == "all") {
 		$rows = $db->select('SELECT * FROM tblinfo INNER JOIN tblusertype ON tblinfo.user_type_id = tblusertype.type_id', '','');
 	} else {
@@ -73,8 +79,10 @@
 		.attendee section footer small {
 
 		}
-		article {
-			margin-top:0px;
+		@media print {
+			article {
+				margin:30px 0 430px 0;
+			}
 		}
 	</style>
 </head>
@@ -120,4 +128,8 @@
     	endforeach; 
     ?>
 </body>
+<script type="text/javascript">
+	document.body.onload=function(){document.body.offsetHeight;window.print()};
+</script>	
+</style>
 </html>
