@@ -2,7 +2,7 @@
     include('../../inc/db.php');
     include('../../inc/functions.php');
 ?>  
-    <table id="userinfo" class="table table-striped table-hover" width="100%">
+    <table id="userinfo" class="table table-responsive table-striped table-hover">
       <thead>
         <tr>
           <th>#</th>

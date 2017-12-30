@@ -205,7 +205,7 @@ if ( !class_exists( 'DB' ) ) {
 }
 
 global $db;
-$db = new DB('epinoy_db', 'E3pinoy!981', 'dbelectronicsigninpage');
+$db = new DB('root', '', 'dbelectronicsigninpage');
 $db_connect = $db->connect();
 
 // print_r($db->select('SELECT * FROM objects WHERE ID = ?', array(10), array('%d')));

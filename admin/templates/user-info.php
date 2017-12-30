@@ -4,7 +4,7 @@
     $rows = $db->select('SELECT * FROM tblinfo INNER JOIN tblusertype ON tblinfo.user_type_id = tblusertype.type_id ORDER BY info_id DESC', '','');
 ?>  
     <a class="btn btn-default" target="_blank" rel="noreferrer" href="<?php echo base_url(); ?>templates/print.php?p=all"><span class="glyphicon glyphicon-print"></span>&nbsp;Print All Name Badge</a><br/><br/>
-    <table id="userinfo" class="table table-striped table-hover" width="100%">
+    <table id="userinfo" class="table table-responsive table-striped table-hover">
       <thead>
         <tr>
           <th>#</th>

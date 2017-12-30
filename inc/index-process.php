@@ -26,7 +26,7 @@
 				echo '<h3>Registered User Sign-in</h3>';
 				require_once('templates/associate-registered-signin-form.php');
 			} elseif ($_GET['q'] == "registered_finish") {
-				echo '<h2>Thank you for signing in!</h2>';
+				echo '<h2>Thank you for signing in '.$_GET['r'].'!</h2>';
 				echo 'Please proceed to the meeting room for our Financial Opportunity Seminar!';
 			} else {
 				echo '<p>This is an Electronic Sign-In Page v1.0</p>';

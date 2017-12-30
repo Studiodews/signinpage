@@ -1,3 +1,9 @@
+<?php 
+	require_once('inc/Mobile_Detect.php');
+	global $detect;
+	$detect = new Mobile_Detect;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,3 +20,5 @@
       <script src="../bower_components/respond/dest/respond.min.js"></script>
     <![endif]-->
 </head>
+<body>
+<div id="wrapper">

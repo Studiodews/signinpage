@@ -1,5 +1,8 @@
 <?php
 	include_once('../inc/functions.php');
+	require_once('../inc/Mobile_Detect.php');
+	global $detect;
+	$detect = new Mobile_Detect;
 	if (!isset($_SESSION['login']) && !empty($_SESSION['login'])) {
 		header('location:/l=t');
 		exit();
@@ -23,3 +26,5 @@
       <script src="../bower_components/respond/dest/respond.min.js"></script>
     <![endif]-->
 </head>
+<body>
+<div id="wrapper">
